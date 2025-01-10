@@ -9,10 +9,12 @@ import { MahasiswaComponent } from './mahasiswa/mahasiswa.component';
 import { otentikasiGuard } from './otentikasi.guard';
 import { LogoutComponent } from './logout/logout.component';
 import { ForexComponent } from './forex/forex.component';
+import { CuacaComponent } from './cuaca/cuaca.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: "login", pathMatch: "full"},
     { path: "admin", component: AdminComponent},
+    { path: "cuaca", component: CuacaComponent, canActivate : [otentikasiGuard]},
     { path: "dashboard", component: DashboardComponent, canActivate: [otentikasiGuard] },
     { path: "dashboard2", component: Dashboard2Component, canActivate: [otentikasiGuard] },
     { path: "forex", component: ForexComponent, canActivate: [otentikasiGuard]},
